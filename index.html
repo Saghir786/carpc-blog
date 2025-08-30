@@ -227,6 +227,8 @@
     <p>When discussing my project at work, it piqued the interest of two of my colleagues. They could see the potential in what I was trying to achieve, and more importantly, together we had the programming skills to help make it happen.</p>
 
     <p>We decided to write our own custom software from scratch using Delphi. We called it MediateICE, and it was designed specifically for in-car computing applications. Unlike the off-the-shelf solutions I'd tried, MediateICE was built around our exact requirements and could be continuously refined and expanded as we discovered new needs and possibilities.</p>
+    
+    <p>Credit where credit is due, Andrew and Shaun undertook the bulk of the development work, leveraging their programming expertise to bring the vision to life. The software was their baby, I supplied a real world setup for testing and feedback.</p>
 
     <div class="image-container">
         <div class="image-placeholder">
@@ -294,7 +296,7 @@
 
     <h2>The Perfect Platform</h2>
 
-    <p>The 7th generation Honda Accord 2.4 proved to be the ideal foundation for this CarPC project. These cars struck a perfect balance as family vehicles and motorway cruisers comfortable, quick (especially with certain modifications... but that's a story for another blog), equipped with all the modern conveniences, and made even better with the custom CarPC installation.</p>
+    <p>The 7th generation Honda Accord 2.4 proved to be the ideal foundation for this CarPC project. These cars struck a perfect balance as family vehicles and motorway cruisers, comfortable, quick (especially with certain modifications... but that's a story for another blog), equipped with all the modern conveniences, and made even better with the custom CarPC installation.</p>
 
     <p>Between 2006 and 2013, I owned three different 7th gen Accords and installed this CarPC system into every single one of them. </p>
 
@@ -319,7 +321,7 @@
         <div class="image-caption">Android screen mirroring in action years before Android Auto existed</div>
     </div>
 
-    <p>The screen mirroring worked through the same ingenious daisy-chain of converters that I'd developed for the PC's VGA output, but adapted for mobile devices. The process went: MHL cable from phone to HDMI, then HDMI to VGA (using the black converter box visible in the trunk photo), and finally VGA to RGBS through the large scan converter. While this multi-step conversion process might seem complex, it was the only way to bridge the gap between modern smartphone output and the Honda's proprietary display system.</p>
+    <p>The screen mirroring worked through the same ingenious daisy-chain of converters that I'd developed for the PC's VGA output, but adapted for mobile devices. The process went: MHL cable from phone to HDMI, then HDMI to VGA (using the black converter box visible in the boot photo), and finally VGA to RGBS through the large scan converter. While this multi-step conversion process might seem complex, it was the only way to bridge the gap between modern smartphone output and the Honda's proprietary display system.</p>
 
     <div class="signal-chain">
         MHL → HDMI → VGA → RGBS → Honda Display
@@ -327,20 +329,20 @@
 
     <div class="image-container">
         <div class="image-placeholder">
-            <img src="images/Sorry.png" alt="Trunk Installation of CarPC">
+            <img src="images/Sorry.png" alt="Boot/Trunk Installation of CarPC">
         </div>
-        <div class="image-caption">Complete trunk installation with Dell PC, HDMI to VGA converter (black box), and organized cable management</div>
+        <div class="image-caption">Complete boot/trunk installation with Dell PC, HDMI to VGA converter (black box), and organized cable management</div>
     </div>
 
-    <p>You can see in the trunk installation photo how all the components were mounted and connected the Dell PC on the right, the various converters and cables, and the systematic approach to organizing what could have easily become a chaotic mess of wires and boxes. The black HDMI to VGA converter was a crucial link in the chain that made smartphone mirroring possible.</p>
+    <p>If I did have a photo of the boot you would see how all the components were mounted and connected the Dell PC on the right, the various converters and cables, and you'd see the systematic approach to organizing what could have easily become a chaotic mess of wires and boxes. The black HDMI to VGA converter was a crucial link in the chain that made smartphone mirroring possible.</p>
 
-    <p>I had similar implementations working with Windows Mobile devices as well. In fact, I might have even had a virtual Windows Mobile setup running on the PC itself it's been nearly two decades now, so some of the details are getting fuzzy! But the key point was that the hardware setup I'd created was flexible enough to display any video source that could be converted through the signal chain, whether it was the PC running MediateICE, a connected smartphone, or even emulated mobile environments.</p>
+    <p>I had similar implementations working with Windows Mobile devices as well. In fact, I might have even had a virtual Windows Mobile setup running on the PC itself it's been nearly two decades now, so some of the details are getting fuzzy! But the key point was that the hardware setup I'd created was flexible enough to display any video source that could be converted through the signal chain, whether it was the PC running MediateICE, a connected smartphone.</p>
 
     <p>This hardware-based approach to screen mirroring meant that drivers could access their phone's navigation apps, media players, and other applications directly through the car's integrated display, regardless of what the phone's operating system was. This created a user experience that wouldn't become mainstream until nearly a decade later when manufacturers finally caught up with similar built-in solutions.</p>
 
     <h2>Looking Back</h2>
 
-    <p>This project represents a fascinating moment in automotive technology history. It was the era when enthusiasts had to be part electrical engineer, part detective, and part mechanic to achieve what we now take for granted with Android Auto and CarPlay. The amount of reverse engineering, custom hardware sourcing, and creative problem-solving required was substantial, but that was also part of the appeal.</p>
+    <p>This project was a fascinating personal journey that happened during an era when enthusiasts had to be part electrical engineer, part detective, and part mechanic to achieve what we now take for granted with Android Auto and CarPlay. The amount of reverse engineering, custom hardware sourcing, and creative problem-solving required was substantial, but that was also part of the appeal. More importantly, it allowed me to learn extensively and let out the engineer hidden within me.</p>
 
     <p>The wire probing technique that revealed the RGBS signal requirement was particularly crucial without that detective work, the entire project would have been impossible. It's a reminder that sometimes the most important tool in a tech project isn't something you can buy, but rather the willingness to dig deep and understand exactly how existing systems work before you try to modify them.</p>
 
@@ -348,12 +350,24 @@
         <strong>The Legacy:</strong> Looking at today's connected cars with their seamless smartphone integration, it's easy to forget that someone had to pioneer these concepts first. This project, with its custom MediateICE software and innovative screen mirroring capabilities, was essentially a working prototype of what would eventually become standard automotive technology built nearly a decade before the industry caught up.
     </div>
 
-    <p>The technical challenges we overcame from video signal conversion to automotive power management to custom software development showcase the kind of systems thinking and creative problem-solving that drives innovation. While modern solutions are certainly more elegant and user-friendly, there's something deeply satisfying about having built and understood every aspect of the system from the ground up.</p>
+    <p>The technical challenges I overcame from video signal conversion to automotive power management to custom software development showcase the kind of systems thinking and creative problem-solving that drives innovation. While modern solutions are certainly more elegant and user-friendly, there's something deeply satisfying about having built and understood every aspect of the system from the ground up.</p>
 
     <p>For anyone inspired to tackle similar projects today, the good news is that the hardware landscape has evolved dramatically. What once required industrial-grade scan converters and complex power management can now be achieved with compact, efficient components. But the core principle remains the same: understanding existing systems, identifying the gaps, and engineering creative solutions to bridge them.</p>
 
     <div class="tech-highlight">
-        <strong>Project Impact:</strong> This Honda Accord PC integration project created a working car computer system that was years ahead of its time on a personal level. While it didn't impact the broader automotive industry, the screen mirroring, custom interface design, and seamless integration approaches I developed independently paralleled concepts that wouldn't become mainstream until nearly a decade later.
+        <strong>Personal Achievement:</strong> This Honda Accord PC integration project created a working car computer system that was years ahead of its time on a personal level. While it didn't impact the broader automotive industry, the screen mirroring, custom interface design, and seamless integration approaches I developed independently paralleled concepts that wouldn't become mainstream until nearly a decade later. The system even included automatic file synchronisation - pull up outside the house, the CarPC would connect to the home WiFi and run folder sync on media folders, automatically updating the car's music and video libraries without any manual intervention. Most importantly, I thoroughly enjoyed building it and I thoroughly enjoyed using it daily for many, many years.
     </div>
+
+    <h2>Take On The Challenge:</h2> 
+    
+    <p>If there's one thing I'd want readers to take away from this project, it's this: never shy away from tasks that look impossible at the start. When I first looked at that Honda navigation screen and wondered if I could get my PC to display on it, the technical challenges seemed insurmountable. How do you figure out proprietary video signals? How do you keep a PC running through engine starts? How do you create automotive-grade software?</p>
+
+    <p>But every impossible task is just a series of smaller, solvable problems. The key is breaking down the challenge, tackling each piece methodically, and never being afraid to learn something completely new. I wasn't an automotive electrical engineer when I started this project, but I became one through necessity and curiosity.</p>
+
+    <p>The most rewarding projects are often the ones where you have no idea how you'll solve them when you begin. They force you to grow, to research, to experiment, and to think creatively. Whether it's reverse engineering video signals, designing power management circuits, or writing custom software, each challenge teaches you something valuable that you can apply to future projects.</p>
+
+    <p>So whatever technical challenge you're considering, whether it's modifying your car, building custom electronics, or creating software solutions to problems that bother you, my advice is simple: start. Begin with research, gather your tools, and tackle the first small piece. You'll be amazed what you can accomplish when you combine curiosity with persistence and a willingness to learn as you go.</p>
+
+    <p>The engineer inside of you is waiting to be unleashed. Sometimes all it takes is finding the right project to let it out.</p>
 </body>
 </html>
