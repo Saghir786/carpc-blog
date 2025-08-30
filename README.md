@@ -1,2 +1,2 @@
 # carpc-blog
- A blog of my CarPC installation
+ A blog of my 2006 CarPC installation 
