@@ -141,9 +141,13 @@
 
     <h2>The Detective Work</h2>
 
-    <p>The first challenge was figuring out exactly what kind of video signal the Honda's display was expecting. This wasn't information you could just Google in 2006 - there were no forums full of people doing similar projects, and Honda certainly wasn't publishing technical specifications for hackers to use.</p>
+    <p>The first challenge was figuring out exactly what kind of video signal the Honda's display was expecting. This wasn't information you could just Google in 2006 and Honda certainly wasn't publishing technical specifications for hackers to use.</p>
 
-    <p>I decided to take the direct approach: reverse engineering. I carefully accessed the wiring between the DVD satellite navigation drive and the display screen, armed with a multimeter and an oscilloscope. The process involved methodically tracing the signal paths and identifying each wire's function - you can see in the photos the custom cable I created with BNC connectors for the RGBS signals, allowing me to properly interface with test equipment and eventually connect to the scan converter.</p>
+    <p>I decided to take the direct approach of reverse engineering. I carefully accessed the wiring between the DVD satellite navigation drive and the display screen. Using an oscilloscope, I looked for what appeared to be video signals and found four promising candidates. Now came the moment of truth; I cut these wires one by one to see what would happen. The first wire I cut caused the video to start scrolling vertically, bingo, jackpot! This indicated it was the sync signal. However, I had actually expected that losing sync would also cause me to lose a colour, but I didn't - this threw me off at the time.</p>
+
+    <p>The other three wires were the Red, Green, and Blue signals. Cutting each one in turn would change the screen colour, clearly indicating which colour signal each wire carried. Through this methodical process, I had successfully identified all four components of the RGBS signal format. My initial expectation had been to find a standard composite video signal, which is why discovering RGBS was so surprising and confusing at first.</p>
+
+    <p>With the signal format now understood, I could create the custom cable needed to inject my own video signal into the Honda's display system. You can see in the photos the cable I built with BNC connectors for each of the RGBS signals, this is the one key component that enabled this whole project, it allowed me to control the video source to the Sat Nav display.  I was absolutely over the moon, the four wires that I had identified via probing with the oscilloscope were the exact ones I needed, though I was still surprised to discover a European video standard (RGBS is often referred to as EuroSCART) in a Japanese car.</p>
 
     <div class="image-container">
         <div class="image-placeholder">
@@ -156,10 +160,10 @@
         <div class="image-placeholder">
             <img src="images/CarPCRGBSCable.png" alt="CarPCRGBSCable">
         </div>
-        <div class="image-caption">Custom RGBS cable with BNC connectors for proper signal analysis</div>
+        <div class="image-caption">Custom RGBS cable with BNC connectors for proper signal injection</div>
     </div>
 
-    <p>The close-up photo shows the actual video interception point behind the dashboard where I tapped into the Honda's internal video signals. You can see the careful work involved in accessing these signals - including the advanced interference "screening" (yes, that's tin foil!) wrapped around the connections to prevent signal degradation and interference from the car's electrical systems. While it might look improvised, electromagnetic shielding was actually crucial for maintaining clean video signals in the electrically noisy environment of a car's dashboard.</p>
+    <p>The close-up photo below shows the actual video interception point behind the dashboard where I tapped into the Honda's internal video signals. You can see the tin foil (yep that is actual tin foil straight from the kitchen!) wrapped around the connections - my "advanced interference screening" solution to prevent signal degradation and interference from the car's electrical systems. While it might look improvised, electromagnetic shielding was actually crucial for maintaining clean video signals in the electrically noisy environment of a car's dashboard.</p>
 
     <div class="image-container">
         <div class="image-placeholder">
@@ -169,7 +173,7 @@
     </div>
 
     <div class="tech-highlight">
-        <strong>Technical Discovery:</strong> After probing various wires and tracing signal paths, I made a crucial discovery. The Honda navigation system wasn't using standard composite video or S-video like many car displays of the era. Instead, it required <strong>RGBS</strong> - that's Red, Green, Blue, and Sync - a format that was more common in European markets and certain professional applications.
+        <strong>Technical Discovery:</strong> As mentioned above, after probing various wires and tracing signal paths, I made a crucial discovery. The Honda navigation system wasn't using standard composite video or S-video like many car displays of the era. Instead, it required <strong>RGBS</strong> - that's Red, Green, Blue, and Sync - a format that was more common in European markets and certain professional applications.
     </div>
 
     <p>This was both good news and bad news. Good because RGBS could potentially deliver better image quality than composite video. Bad because it meant I needed a very specific type of converter, and options were extremely limited in 2006.</p>
@@ -191,7 +195,7 @@
     <p>My solution for powering the Dell PC seemed straightforward enough - a 12V DC to 240V AC inverter that would convert the car's electrical system to standard UK household power that the PC expected. Initial bench tests were promising. Connect the inverter, plug in the PC, and everything worked perfectly. The computer booted up normally and ran without any issues while parked with the engine off.</p>
 
     <div class="challenge-box">
-        <strong>The Problem:</strong> The moment I turned the key to start the engine, disaster struck. The PC would instantly lose power and shut down abruptly, leaving Windows in that unhappy state that anyone who's experienced sudden power losses knows all too well.
+        <strong>The Problem:</strong> The moment I turned the key to start the engine, disaster would strike! The PC would instantly lose power and shut down abruptly, leaving Windows in that unhappy state that anyone who's experienced sudden power losses knows all too well.
     </div>
 
     <p>The problem was fundamental to how car electrical systems work. When you crank the engine, the starter motor draws enormous amounts of current sometimes 200-300 amps or more. This massive power draw causes the car's electrical system voltage to drop significantly, often falling from the nominal 12V down to 8V or even lower during those crucial few seconds of engine start. My inverter simply couldn't maintain stable output when the input voltage collapsed like that.</p>
@@ -202,16 +206,16 @@
 
     <p>The tank circuit consisted of a small 12V lead acid battery that would automatically kick in whenever the main battery's voltage dropped below a certain threshold. During normal operation, this backup battery would stay fully charged from the car's alternator. But when the starter engaged and the main system voltage collapsed, the tank circuit would seamlessly take over, keeping the inverter and PC running smoothly through the engine start sequence.</p>
 
-    <p>Implementing this wasn't trivial, it required careful selection of the backup battery size, proper charging circuitry, and a voltage-sensing relay system to ensure the handoff between main power and backup power was transparent to the PC. The relay would monitor the main system voltage and automatically switch to the tank circuit whenever it detected the voltage drop that occurred during engine cranking. Once the engine started and the alternator brought the main system voltage back to normal levels, the relay would switch back and the backup battery would begin recharging for the next start cycle.</p>
-    <p>The satisfaction of solving this power management challenge was immense, and I felt genuinely proud of applying my electronics knowledge so effectively. It made me reflect on my career path - had I chosen the right direction with IT, or should I have pursued electronic engineering instead? This project certainly revealed there's definitely an engineer inside me, one who thrives on understanding systems at a fundamental level and creating elegant solutions to complex problems.</p>
+    <p>Implementing this wasn't trivial, it required careful selection of the backup battery size, proper charging circuitry, and a voltage-sensing relay system to ensure the handoff between main power and backup power was transparent to the PC. The relay circuit would monitor the main system voltage and automatically switch to the tank circuit whenever it detected the voltage drop that occurred during engine cranking. Once the engine started and the alternator brought the main system voltage back to normal levels, the relay would switch back and the backup battery would begin recharging for the next start cycle.</p>
+    <p>The satisfaction of solving this power management challenge was immense, and I felt genuinely proud of applying my electronics knowledge so effectively. It actually made me reflect on my career path - had I chosen the right direction with IT, or should I have pursued electronic engineering instead? This project certainly revealed there's definitely an engineer inside of me, one who thrives on understanding systems at a fundamental level and creating elegant solutions to complex problems.</p>
 
-    <p>But once properly installed, the tank circuit completely eliminated the shutdown problem. The relief was immense, the PC would keep running happily regardless of what was happening with the engine, finally making the system truly practical for everyday use</p>
+    <p>Once properly installed, the tank circuit completely eliminated the shutdown problem. The relief was immense, the PC and the screen would keep running happily regardless of what was happening with the engine, it was trully amazing to see the screen remain on during cranking (I don't even think modern cars do that). With this solution in place, the CarPC was finally, truly practical for everyday use</p>
 
     <h2>The Software Challenge</h2>
 
     <p>With the hardware finally working reliably, video converting properly and power staying on through engine starts I faced the next major hurdle: what software to actually run on this custom car computer system. Once again, This turned out to be more challenging than I'd anticipated. But hey, as you've gathered I thrive on challenges.</p>
 
-    <p>My first attempt was with open source software. While it technically worked, the user interface was clunky. When you're trying to operate something while driving (safely, of course), you need large buttons, clear graphics, and intuitive navigation things that desktop-oriented open source solutions weren't optimised for. It did however give me an idea of the potential of the system that I'd put in place.</p>
+    <p>My first attempt was with open source software. While it technically worked, the user interface was rather clunky. When you're trying to operate something while driving (safely, of course), you need large buttons, clear graphics, and intuitive navigation things that desktop-oriented open source solutions weren't optimised for. It did however give me an idea of the potential of the system that I'd put in place.</p>
 
     <p>Next up, I tried a commercial offering, CentraFuse 2.0, this cost me £60, a significant investment at the time. This had a much better user interface that was clearly designed for automotive applications, but it came with its own set of limitations. The functionality was restricted, and more importantly, there was very little ability to customise it to my specific needs and vision.</p>
 
@@ -368,6 +372,6 @@
 
     <p>So whatever technical challenge you're considering, whether it's modifying your car, building custom electronics, or creating software solutions to problems that bother you, my advice is simple: start. Begin with research, gather your tools, and tackle the first small piece. You'll be amazed what you can accomplish when you combine curiosity with persistence and a willingness to learn as you go.</p>
 
-    <p>The engineer inside of you is waiting to be unleashed. Sometimes all it takes is finding the right project to let it out.</p>
+    <p>The engineer inside of you is waiting to be unleashed. Sometimes all it takes is finding the right project to let it out. What project do you fancy taking on?</p>
 </body>
 </html>
